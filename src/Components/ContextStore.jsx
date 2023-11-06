@@ -5,7 +5,8 @@ import { v4 as uuidv4 } from 'uuid';
 import { useNavigate } from 'react-router-dom'
 import RecipeList from "./RecipeList";
 import FavoriteRecipe from "./FavoriteRecipe";
-require('dotenv').config()
+import dotenv from "dotenv"
+dotenv.config()
 
 const ContextStore = React.createContext()
 
