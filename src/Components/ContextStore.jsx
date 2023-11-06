@@ -47,7 +47,7 @@ function ContextStoreProvider(props) {
     }
 
     const search = formData.search
-    const apiKey = process.env.API_KEY
+    const apiKey = import.meta.env.VITE_API_KEY
 
     function handleSubmit(event) {
         event.preventDefault()
