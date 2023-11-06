@@ -5,6 +5,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { useNavigate } from 'react-router-dom'
 import RecipeList from "./RecipeList";
 import FavoriteRecipe from "./FavoriteRecipe";
+require('dotenv').config()
 
 const ContextStore = React.createContext()
 
@@ -45,7 +46,7 @@ function ContextStoreProvider(props) {
     }
 
     const search = formData.search
-    const apiKey = "ZvKjTgk9lvUztpHQ02BiBQ==HdkAm2ooG4zqbGJU"
+    const apiKey = process.env.API_KEY
 
     function handleSubmit(event) {
         event.preventDefault()
