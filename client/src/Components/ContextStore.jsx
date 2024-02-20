@@ -47,7 +47,7 @@ function ContextStoreProvider(props) {
     }
 
     const search = formData.search
-    // const apiKey = import.meta.env.VITE_API_KEY
+
 
     function handleSubmit(event) {
         event.preventDefault()
@@ -64,22 +64,7 @@ axios.get(`/search/${search}`)
             }))
             )
             .catch(err => console.log(err))
-        // axios.get('https://api.api-ninjas.com/v1/recipe?query=' + search, {
-        //     headers: { "X-Api-Key": "ZvKjTgk9lvUztpHQ02BiBQ==HdkAm2ooG4zqbGJU" },
-        //     contentType: "application/json"
-        // })
-        //     .then(response => setRecipes(response.data.map(x => {
-        //         return {
-        //             title: x.title,
-        //             ingredients: x.ingredients,
-        //             instructions: x.instructions,
-        //             servings: x.servings,
-        //             id: uuidv4(),
-        //             isFavorite: false
-        //         }
-        //     }))
-        //     )
-        //     .catch(err => console.log(err))
+
     }
 
 
