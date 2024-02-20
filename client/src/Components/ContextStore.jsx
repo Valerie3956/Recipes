@@ -5,8 +5,8 @@ import { v4 as uuidv4 } from 'uuid';
 import { useNavigate } from 'react-router-dom'
 import RecipeList from "./RecipeList";
 import FavoriteRecipe from "./FavoriteRecipe";
-import dotenv from "dotenv"
-dotenv.config()
+// import dotenv from "dotenv"
+// dotenv.config()
 
 const ContextStore = React.createContext()
 
@@ -47,15 +47,11 @@ function ContextStoreProvider(props) {
     }
 
     const search = formData.search
-    const apiKey = import.meta.env.VITE_API_KEY
+
 
     function handleSubmit(event) {
         event.preventDefault()
-
-        axios.get('https://api.api-ninjas.com/v1/recipe?query=' + search, {
-            headers: { "X-Api-Key": apiKey },
-            contentType: "application/json"
-        })
+axios.get(`/search/${search}`)
             .then(response => setRecipes(response.data.map(x => {
                 return {
                     title: x.title,
@@ -68,6 +64,7 @@ function ContextStoreProvider(props) {
             }))
             )
             .catch(err => console.log(err))
+
     }
 
 
